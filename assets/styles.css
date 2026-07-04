@@ -146,9 +146,11 @@ h3 { margin: 0 0 10px; font-size: 1.35rem; }
 
 .screens {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
   gap: 24px;
+  max-width: 760px;
+  margin-inline: auto;
 }
 
 .screen-card {
@@ -194,15 +196,17 @@ footer div { display: flex; gap: 18px; }
   .wrap { width: min(100% - 28px, 1080px); }
   header { align-items: flex-start; }
   nav { flex-direction: column; gap: 3px; text-align: right; }
-  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 45px; }
+  .hero { grid-template-columns: minmax(0, 1fr); min-height: auto; padding-top: 45px; }
+  .hero > div { width: 100%; min-width: 0; }
   .phone { width: min(82vw, 350px); transform: none; }
   .features { grid-template-columns: 1fr; }
   .showcase { padding-top: 0; }
   .screens {
-    grid-template-columns: repeat(3, minmax(245px, 1fr));
+    grid-template-columns: repeat(2, minmax(245px, 1fr));
     gap: 16px;
-    margin-right: -14px;
-    padding: 18px 14px 38px 0;
+    width: 100%;
+    margin-right: 0;
+    padding: 18px 0 38px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
   }
